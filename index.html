@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Điều dưỡng học tập | Bài 5</title>
+<style>
+:root{--navy:#16324f;--teal:#087e8b;--mint:#e9f7f5;--bg:#f4f7fb;--ink:#203040;--muted:#64748b;--line:#dce5ee;--white:#fff;--orange:#e99b36}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+header{background:linear-gradient(120deg,#15324f,#087e8b);color:white;padding:22px 18px}
+.wrap{max-width:1100px;margin:auto}.brand{font-size:14px;letter-spacing:1.4px;font-weight:bold;opacity:.9}.hero{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;align-items:center;padding:22px 0 12px}.hero h1{font-size:clamp(26px,4vw,42px);line-height:1.12;margin:8px 0 14px}.hero p{max-width:650px;color:#e2f3f4}.hero-visual{background:#ffffff18;border:1px solid #ffffff35;border-radius:20px;padding:22px;text-align:center;font-size:62px}.hero-visual small{display:block;font-size:14px;line-height:1.5}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0}nav button{border:1px solid #ffffff70;background:#ffffff15;color:white;border-radius:30px;padding:9px 15px;cursor:pointer;font-weight:bold}nav button.active,nav button:hover{background:white;color:var(--navy)}
+main{padding:25px 18px 50px}.page{display:none}.page.active{display:block}.section-title{margin:0 0 6px;color:var(--navy);font-size:26px}.lead{color:var(--muted);margin-top:0}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:white;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 4px 15px #15324f08}.card h3{margin:6px 0 8px;color:var(--navy)}.emoji{font-size:30px}.pill{display:inline-block;border-radius:20px;background:var(--mint);color:#086b74;padding:4px 10px;font-size:12px;font-weight:bold}.callout{background:#fff7e9;border:1px solid #f4d9a9;padding:13px 15px;border-radius:12px;margin:16px 0}.btn{border:0;border-radius:10px;background:var(--teal);color:white;font-weight:bold;padding:12px 17px;cursor:pointer}.btn.secondary{background:#e8eef4;color:var(--navy)}.btn:disabled{opacity:.55;cursor:not-allowed}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.field{display:flex;flex-direction:column;gap:6px;margin:12px 0}.field label{font-weight:bold}.field input,.field select{width:100%;max-width:460px;padding:12px;border:1px solid #bdcad8;border-radius:9px;font:inherit;background:white}.quiz-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}.question{background:white;border:1px solid var(--line);border-radius:14px;padding:18px;margin:14px 0}.question h3{font-size:17px;margin:0 0 12px}.option{display:flex;gap:10px;align-items:flex-start;padding:10px;border:1px solid var(--line);border-radius:9px;margin:7px 0;cursor:pointer}.option:hover{background:#f5fbfb}.option input{margin-top:5px}.explanation{font-size:14px;color:var(--muted);margin-top:8px}.result{border-radius:14px;background:var(--mint);padding:20px;margin:18px 0;border:1px solid #b9e5df}.score{font-size:36px;font-weight:bold;color:#087e8b}.small{font-size:13px;color:var(--muted)}.lesson-list li{margin:8px 0}.procedure{border-left:4px solid var(--teal);padding:10px 14px;background:white;margin:10px 0;border-radius:0 10px 10px 0}.footer{background:#102a43;color:#d6e2ed;padding:22px 18px;font-size:13px}.hidden{display:none!important}
+@media(max-width:760px){.hero{grid-template-columns:1fr}.hero-visual{display:none}.grid{grid-template-columns:1fr}.hero h1{font-size:31px}main{padding:20px 13px 35px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand">ĐIỀU DƯỠNG HỌC TẬP</div>
+<div class="hero"><div><span class="pill">ĐIỀU DƯỠNG CƠ SỞ 1 • BÀI 5</span><h1>Chăm sóc vệ sinh người bệnh hằng ngày</h1><p>Học theo từng chủ đề, ôn quy trình kỹ thuật và tự kiểm tra kiến thức trước buổi thực hành.</p></div><div class="hero-visual">🩺📘<small>Học tập • Thực hành • An toàn người bệnh</small></div></div>
+<nav>
+<button class="active" data-page="home">Trang chủ</button><button data-page="lessons">Bài giảng</button><button data-page="procedures">Quy trình kỹ thuật</button><button data-page="quiz">Trắc nghiệm</button>
+</nav></div></header>
+<main class="wrap">
+<section id="home" class="page active">
+<h2 class="section-title">Chào mừng bạn đến với bài học</h2><p class="lead">Bài 5 — Chăm sóc vệ sinh người bệnh hằng ngày, phần 1</p>
+<div class="grid">
+<div class="card"><div class="emoji">🛁</div><span class="pill">Chủ đề 01</span><h3>Tắm tại giường</h3><p>Nhận định người bệnh, chuẩn bị dụng cụ, trình tự tắm và phòng ngừa tai biến.</p><button class="btn" onclick="showPage('lessons')">Học nội dung</button></div>
+<div class="card"><div class="emoji">🧴</div><span class="pill">Chủ đề 02</span><h3>Gội đầu tại giường</h3><p>Chọn tư thế phù hợp, bảo vệ đầu–cổ, làm sạch tóc và giữ an toàn thiết bị.</p><button class="btn" onclick="showPage('procedures')">Xem quy trình</button></div>
+<div class="card"><div class="emoji">🦷</div><span class="pill">Chủ đề 03</span><h3>Chăm sóc răng miệng</h3><p>Đánh giá khả năng nuốt–khạc, lựa chọn dụng cụ và phòng ngừa hít sặc.</p><button class="btn" onclick="showPage('quiz')">Làm trắc nghiệm</button></div>
+</div>
+<div class="callout"><strong>Lưu ý:</strong> Đây là website học tập minh họa dựa trên bài giảng đã cung cấp. Khi thực hành lâm sàng, luôn tuân thủ quy trình được cơ sở đào tạo/bệnh viện phê duyệt và hướng dẫn của người phụ trách.</div>
+</section>
+<section id="lessons" class="page">
+<h2 class="section-title">Bài giảng tóm tắt</h2><p class="lead">Nội dung tóm tắt để ôn tập trước khi làm bài.</p>
+<div class="card"><h3>1. Đại cương và nguyên tắc chung</h3><ul class="lesson-list"><li>Vệ sinh cá nhân hỗ trợ làm sạch, tạo thoải mái, nhận định da–niêm mạc và giáo dục sức khỏe.</li><li>Trước chăm sóc, đánh giá tri giác, dấu hiệu sinh tồn, mức độ phụ thuộc, tình trạng da, tóc–da đầu, khoang miệng và nguy cơ.</li><li>Xác định đúng người bệnh; giải thích; bảo đảm riêng tư, giữ ấm, chỉ bộc lộ vùng đang chăm sóc.</li><li>Vệ sinh tay đúng thời điểm; găng không thay thế vệ sinh tay. Thực hiện nhẹ nhàng từ vùng sạch đến vùng bẩn.</li><li>Theo dõi người bệnh; tạm ngừng khi khó thở, tím tái, chóng mặt, đau tăng, tụt huyết áp hoặc rét run.</li></ul></div>
+<div class="card" style="margin-top:14px"><h3>2. Tắm người bệnh tại giường</h3><ul class="lesson-list"><li>Đánh giá tri giác, sinh hiệu, tình trạng da, khả năng tự tắm, nguy cơ tổn thương da và y lệnh.</li><li>Chuẩn bị khăn sạch, nước ấm, sản phẩm làm sạch phù hợp, tấm lót chống thấm, đồ vải sạch và phương tiện phòng hộ theo nguy cơ.</li><li>Che phủ vùng chưa chăm sóc; lau mắt từ khóe trong ra ngoài; không dùng xà bông vùng mặt.</li><li>Tắm từng vùng, lau khô; dùng khăn/găng riêng cho tầng sinh môn. Nữ lau từ trước ra sau; hậu môn làm sau cùng.</li><li>Không xoa bóp vùng da đỏ/tổn thương; bảo đảm giường thấp, khóa bánh, chuông gọi trong tầm tay; ghi phiếu chăm sóc.</li></ul></div>
+<div class="card" style="margin-top:14px"><h3>3. Gội đầu tại giường</h3><ul class="lesson-list"><li>Nhận định khả năng dung nạp tư thế, chấn thương đầu–cột sống cổ, suy hô hấp, tình trạng tóc và da đầu.</li><li>Không tự xoay/ngửa đầu khi nghi ngờ tổn thương cột sống cổ chưa ổn định.</li><li>Chải tóc từ ngọn lên gốc; bảo vệ tai, kiểm tra máng và dòng thoát nước trước khi làm ướt tóc.</li><li>Mát-xa bằng đầu ngón tay, không cào bằng móng; xả sạch, đỡ đầu–cổ và rút máng an toàn.</li></ul></div>
+<div class="card" style="margin-top:14px"><h3>4. Chăm sóc răng miệng</h3><ul class="lesson-list"><li>Đánh giá tri giác, khả năng nuốt–khạc, nguy cơ hít sặc, răng lung lay, đau và chảy máu.</li><li>Người không khạc được/nguy cơ hít sặc: chuẩn bị hút miệng, dùng lượng dịch tối thiểu cần thiết, loại bỏ dịch ứ; không bơm rửa tự do.</li><li>Chải nhẹ nhàng; hướng lông bàn chải khoảng 45° về viền nướu; làm sạch các mặt răng và lưỡi phù hợp.</li><li>Với người bệnh đặt nội khí quản, tuân thủ quy trình chuyên biệt của đơn vị và người thực hiện được đào tạo.</li></ul></div>
+<button class="btn" style="margin-top:16px" onclick="showPage('quiz')">Bắt đầu trắc nghiệm</button>
+</section>
+<section id="procedures" class="page">
+<h2 class="section-title">Quy trình kỹ thuật — điểm cần nhớ</h2><p class="lead">Bản tóm tắt học tập, không thay thế bảng kiểm chính thức.</p>
+<div class="procedure"><h3>🛁 Tắm tại giường</h3><ol><li>Vệ sinh tay, phòng hộ theo nguy cơ, chuẩn bị nước ấm và dụng cụ.</li><li>Giải thích, bảo đảm riêng tư, đánh giá người bệnh và thiết bị.</li><li>Lau mặt, tay, ngực–bụng, chân, lưng–mông; lau khô từng vùng.</li><li>Vệ sinh tầng sinh môn bằng khăn/găng riêng; làm hậu môn sau cùng.</li><li>Mặc quần áo, đặt tư thế thoải mái, giường thấp và chuông gọi trong tầm tay.</li><li>Thu dọn, vệ sinh tay, ghi phiếu chăm sóc.</li></ol></div>
+<div class="procedure"><h3>🧴 Gội đầu tại giường</h3><ol><li>Đánh giá tư thế, đầu–cổ và khả năng dung nạp; vệ sinh tay và phòng hộ.</li><li>Chuẩn bị máng, đường thoát nước, tấm chống thấm và nước ấm.</li><li>Chải tóc từ ngọn lên gốc; che trán và bảo vệ tai.</li><li>Làm ướt, gội nhẹ bằng đầu ngón tay, xả sạch.</li><li>Đỡ đầu–cổ, rút máng an toàn, thấm khô tóc và hỗ trợ người bệnh về tư thế phù hợp.</li><li>Thu dọn, vệ sinh tay, ghi phiếu chăm sóc.</li></ol></div>
+<div class="procedure"><h3>🦷 Chăm sóc răng miệng</h3><ol><li>Đánh giá tri giác, nuốt–khạc, nguy cơ hít sặc và tình trạng khoang miệng.</li><li>Chuẩn bị dụng cụ phù hợp; tháo răng giả nếu có và đặt nơi an toàn.</li><li>Chọn tư thế an toàn; người không khạc được cần kiểm soát dịch và chuẩn bị hút miệng.</li><li>Chải nhẹ các mặt răng, làm sạch lưỡi khi cần; loại bỏ kem và dịch, tránh ứ dịch.</li><li>Đặt lại tư thế an toàn, theo dõi bất thường; thu dọn, vệ sinh tay và ghi phiếu.</li></ol></div>
+<div class="callout">★ Trong tài liệu, bước có dấu sao ở bảng kiểm là bước trọng yếu; không đạt bước trọng yếu thì toàn bài thực hành không đạt theo tiêu chí của bài học.</div>
+</section>
+<section id="quiz" class="page">
+<h2 class="section-title">Trắc nghiệm ôn tập Bài 5</h2><p class="lead">20 câu • Mỗi câu một đáp án đúng • Điểm tối đa 10 • Xem giải thích sau khi nộp bài.</p>
+<div class="card">
+<div class="field"><label for="studentId">Mã sinh viên *</label><input id="studentId" maxlength="40" placeholder="Ví dụ: CQ26DD01A001" autocomplete="off"></div>
+<div class="field"><label for="studentName">Họ tên (không bắt buộc)</label><input id="studentName" maxlength="80" placeholder="Nhập họ tên"></div>
+<div class="field"><label for="classCode">Mã lớp / mã truy cập *</label><input id="classCode" maxlength="40" placeholder="Giảng viên cung cấp mã lớp"></div>
+<div class="small">Mã sinh viên được dùng để đối chiếu kết quả. Không nhập thông tin sức khỏe hoặc dữ liệu người bệnh.</div>
+</div>
+<div class="quiz-top" style="margin-top:20px"><strong id="progress">Đã trả lời 0/20 câu</strong><button class="btn secondary" onclick="clearAnswers()">Xóa lựa chọn</button></div>
+<div id="questions"></div>
+<div class="row"><button class="btn" id="submitBtn" onclick="submitQuiz()">Nộp bài và xem kết quả</button><span id="status" class="small" role="status"></span></div>
+<div id="result" class="hidden"></div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><strong>ĐIỀU DƯỠNG HỌC TẬP</strong><p>Bài 5 — Chăm sóc vệ sinh người bệnh hằng ngày, phần 1.</p><p>Nội dung phục vụ học tập; đối chiếu tài liệu gốc và quy trình được phê duyệt trước khi áp dụng lâm sàng.</p><p>© Website học tập nội bộ lớp — bản mẫu có thể chỉnh sửa.</p></div></footer>
+<script>
+const QUESTIONS = [
+{q:"Mục đích chung của chăm sóc vệ sinh cá nhân người bệnh là gì?",o:["Chỉ làm đẹp cho người bệnh","Làm sạch, tạo thoải mái, hỗ trợ nhận định da–niêm mạc và giáo dục sức khỏe","Thay thế hoàn toàn việc thay đổi tư thế","Chỉ thực hiện khi người bệnh yêu cầu"],a:1,e:"Tài liệu nêu mục đích gồm làm sạch, tạo thoải mái, nhận định da–niêm mạc và giáo dục sức khỏe."},
+{q:"Trước khi thực hiện chăm sóc vệ sinh, điều dưỡng cần làm gì trước tiên trong phần nhận định?",o:["Chọn dầu gội","Đánh giá tri giác, dấu hiệu sinh tồn và tình trạng người bệnh","Thay drap ngay","Bôi dưỡng ẩm"],a:1,e:"Cần nhận định toàn trạng, tri giác, dấu hiệu sinh tồn, đau, khả năng hợp tác và nguy cơ té ngã."},
+{q:"Nguyên tắc nào đúng về găng tay?",o:["Mang găng thì không cần vệ sinh tay","Chỉ cần vệ sinh tay cuối ca","Găng không thay thế vệ sinh tay","Chỉ cần mang găng khi tắm người bệnh tỉnh"],a:2,e:"Tài liệu nhấn mạnh găng không thay thế vệ sinh tay; phòng hộ được lựa chọn theo nguy cơ."},
+{q:"Khi lau mắt trong kỹ thuật tắm tại giường, hướng lau được nêu trong tài liệu là gì?",o:["Từ khóe ngoài vào trong","Từ khóe trong ra ngoài","Lau mạnh theo vòng tròn","Dùng xà bông để làm sạch"],a:1,e:"Lau mắt từ khóe trong ra ngoài; vùng mặt không dùng xà bông."},
+{q:"Khi tắm tại giường, vùng nào cần được vệ sinh sau cùng?",o:["Mặt","Hai cánh tay","Ngực và bụng","Hậu môn"],a:3,e:"Tầng sinh môn được vệ sinh bằng khăn/găng riêng; hậu môn làm sau cùng."},
+{q:"Nguyên tắc vệ sinh tầng sinh môn nữ được nêu trong bài là gì?",o:["Lau từ sau ra trước","Lau từ trước ra sau","Dùng một mặt khăn cho mọi lượt lau","Thụt rửa âm đạo thường quy"],a:1,e:"Lau từ trước ra sau, mỗi lượt dùng phần khăn sạch; không đưa chất bẩn từ hậu môn lên phía trước."},
+{q:"Khi phát hiện vùng da đỏ hoặc tổn thương do tì đè, điều dưỡng nên làm gì?",o:["Xoa bóp mạnh cho lưu thông máu","Chà bằng khăn khô","Không xoa bóp vùng đỏ/tổn thương; giảm áp lực và báo/đánh giá theo quy trình","Bỏ qua nếu người bệnh không đau"],a:2,e:"Tài liệu yêu cầu không xoa bóp vùng đỏ/tổn thương; cần giảm áp lực, giữ da sạch–khô và đánh giá phù hợp."},
+{q:"Khi nào cần tạm ngừng kỹ thuật chăm sóc theo tài liệu?",o:["Người bệnh muốn hỏi thêm","Khó thở, tím tái, chóng mặt, đau tăng, tụt huyết áp hoặc rét run","Người bệnh muốn đổi khăn","Khi đã chuẩn bị xong dụng cụ"],a:1,e:"Đây là các dấu hiệu bất thường được nêu cần tạm ngừng và xử trí."},
+{q:"Điều nào đúng khi kết thúc tắm tại giường?",o:["Để giường cao để dễ xuống","Để chuông gọi ngoài tầm tay","Đặt người bệnh thoải mái, giường thấp, khóa bánh và chuông gọi trong tầm tay","Không cần ghi phiếu chăm sóc"],a:2,e:"Sau chăm sóc, cần đặt tư thế thoải mái, giường thấp, khóa bánh, chuông gọi trong tầm tay và ghi phiếu."},
+{q:"Khi nhận định trước gội đầu tại giường, yếu tố nào đặc biệt quan trọng?",o:["Màu áo người bệnh","Chấn thương đầu–cột sống cổ và khả năng dung nạp tư thế","Số người thăm bệnh","Màu của máng gội"],a:1,e:"Cần đánh giá chấn thương đầu–cột sống cổ, suy hô hấp, chóng mặt và khả năng nằm ở tư thế gội."},
+{q:"Nếu nghi ngờ tổn thương cột sống cổ chưa ổn định, điều dưỡng nên làm gì?",o:["Tự ngửa đầu để đặt máng","Xoay cổ nhanh để gội thuận tiện","Không tự xoay/ngửa đầu; chọn cách vệ sinh giữ thẳng trục theo kế hoạch ê-kíp","Bỏ qua đánh giá và tiếp tục"],a:2,e:"Tài liệu yêu cầu không tự xoay, ngửa đầu hoặc đặt máng khi chưa bảo đảm an toàn."},
+{q:"Chải tóc trước khi gội nên thực hiện theo hướng nào?",o:["Từ gốc tóc ra ngọn tóc bằng lực mạnh","Từ đuôi/ngọn tóc dần lên gốc tóc","Chỉ chải sau khi tóc ướt","Không cần gỡ rối"],a:1,e:"Gỡ rối từ ngọn lên gốc giúp tóc đỡ rối và ít rụng."},
+{q:"Khi gội đầu, thao tác làm sạch da đầu phù hợp là gì?",o:["Cào bằng móng tay","Mát-xa bằng đầu ngón tay, không cào bằng móng","Dùng nước nóng nhất có thể","Chà mạnh để loại bỏ gàu"],a:1,e:"Tài liệu nêu dùng dầu gội theo hướng dẫn, mát-xa bằng đầu ngón tay và không cào bằng móng."},
+{q:"Khi rút máng gội, điều dưỡng cần chú ý điều gì?",o:["Kéo giật đầu để nhanh hơn","Đỡ đầu–cổ, rút máng an toàn, không kéo giật đầu hoặc dây máy thở","Để nước chảy tự do lên giường","Không cần quan sát người bệnh"],a:1,e:"Cần đỡ đầu–cổ và tránh kéo giật đầu hoặc dây máy thở."},
+{q:"Trước chăm sóc răng miệng, đánh giá nào đặc biệt quan trọng để phòng hít sặc?",o:["Khả năng nuốt, khạc và bảo vệ đường thở","Chiều dài tóc","Khả năng tự đi bộ","Thói quen ngủ"],a:0,e:"Tài liệu yêu cầu đánh giá khả năng nuốt, khạc/nhổ và bảo vệ đường thở."},
+{q:"Với người bệnh không khạc được hoặc có nguy cơ hít sặc, cách làm nào phù hợp?",o:["Bơm nhiều nước tự do vào miệng","Không cần hút dịch","Dùng lượng dịch tối thiểu cần thiết, loại bỏ dịch ứ và chuẩn bị hút miệng khi cần","Đặt người bệnh nằm phẳng trong mọi trường hợp"],a:2,e:"Tài liệu nhấn mạnh kiểm soát dịch, hút khi cần và không bơm rửa tự do."},
+{q:"Góc đặt lông bàn chải so với viền nướu được nêu trong bài là khoảng bao nhiêu?",o:["15°","30°","45°","90°"],a:2,e:"Tài liệu nêu đặt lông bàn chải nghiêng khoảng 45° hướng về viền nướu, thao tác nhẹ."},
+{q:"Đối với người bệnh đặt nội khí quản, chăm sóc răng miệng cần thực hiện thế nào?",o:["Áp dụng giống hệt mọi người bệnh, không cần điều chỉnh","Tuân thủ kế hoạch chuyên biệt của đơn vị và người thực hiện được đào tạo","Tháo ống nội khí quản để dễ vệ sinh","Bơm rửa tự do vào miệng"],a:1,e:"Tài liệu yêu cầu phối hợp quy trình chuyên biệt của đơn vị; không tự thay đổi áp lực bóng chèn hoặc cố định ống."},
+{q:"Theo tài liệu, găng và dụng cụ cho vùng tầng sinh môn nên được sử dụng thế nào?",o:["Dùng chung với vùng mặt","Dùng riêng cho vùng tầng sinh môn","Dùng lại sau khi rửa qua nước","Không cần thay khi chuyển từ bẩn sang sạch"],a:1,e:"Tài liệu nêu dùng khăn/gạc và găng riêng cho vệ sinh tầng sinh môn."},
+{q:"Bảng kiểm thực hành trong tài liệu quy định điều gì đối với bước trọng yếu có dấu ★?",o:["Có thể bỏ qua nếu tổng điểm cao","Không đạt một bước trọng yếu thì toàn bài không đạt theo tiêu chí của bài thực hành","Chỉ cần ghi nhớ, không cần thực hiện","Chỉ áp dụng cho chăm sóc răng miệng"],a:1,e:"Trang bảng kiểm nêu dấu ★ là bước trọng yếu; không đạt một bước ★ thì toàn bài không đạt theo tiêu chí của bài thực hành."}
+];
+let submitted=false;
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===id));document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+function renderQuestions(){const box=document.getElementById('questions');box.innerHTML='';QUESTIONS.forEach((q,i)=>{const div=document.createElement('div');div.className='question';div.id='q'+i;div.innerHTML=`<h3>Câu ${i+1}. ${q.q}</h3>`+q.o.map((opt,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}" onchange="updateProgress()"><span><strong>${String.fromCharCode(65+j)}.</strong> ${opt}</span></label>`).join('')+`<div class="explanation hidden" id="exp${i}"></div>`;box.appendChild(div);});}
+function updateProgress(){let n=QUESTIONS.filter((q,i)=>document.querySelector(`input[name="q${i}"]:checked`)).length;document.getElementById('progress').textContent=`Đã trả lời ${n}/${QUESTIONS.length} câu`;}
+function clearAnswers(){if(submitted)return;document.querySelectorAll('#questions input').forEach(x=>x.checked=false);updateProgress();document.getElementById('status').textContent='';}
+function getConfig(){return {endpoint:'https://script.google.com/macros/s/AKfycbwx0TR8DwRl3iBDv-G8Wl0AQ822Q66Q5BC03S9Em8jLlGHbPGXifY7ZHzGOfJ-77r7MkQ/exec',classCode:'DDCS1-B5'};}
+async function submitQuiz(){
+ if(submitted){return;}const sid=document.getElementById('studentId').value.trim();const name=document.getElementById('studentName').value.trim();const code=document.getElementById('classCode').value.trim();
+ if(!sid||!code){alert('Vui lòng nhập mã sinh viên và mã lớp/mã truy cập.');return;}
+ const answers=QUESTIONS.map((q,i)=>{const el=document.querySelector(`input[name="q${i}"]:checked`);return el?Number(el.value):null;});
+ if(answers.some(a=>a===null)&&!confirm('Bạn còn câu chưa trả lời. Vẫn nộp bài chứ?'))return;
+ const correct=answers.reduce((sum,a,i)=>sum+(a===QUESTIONS[i].a?1:0),0);const score=Math.round((correct/QUESTIONS.length*10)*100)/100;
+ const result=document.getElementById('result');result.classList.remove('hidden');result.innerHTML=`<div class="result"><div>Hoàn thành bài kiểm tra</div><div class="score">${score.toFixed(1)}/10</div><strong>${correct}/${QUESTIONS.length} câu đúng</strong><p>Mã sinh viên: ${escapeHtml(sid)}${name?` · ${escapeHtml(name)}`:''}</p><p>Bạn có thể xem đáp án đúng và giải thích bên dưới. Hãy ôn lại những nội dung còn sai.</p></div>`;
+ QUESTIONS.forEach((q,i)=>{const chosen=answers[i];const exp=document.getElementById('exp'+i);exp.classList.remove('hidden');exp.innerHTML=`<strong>${chosen===q.a?'✓ Chính xác':'✗ Chưa đúng'}.</strong> Đáp án đúng: ${String.fromCharCode(65+q.a)}. ${q.o[q.a]}<br>${q.e}`;});
+ const cfg=getConfig();const status=document.getElementById('status');const btn=document.getElementById('submitBtn');btn.disabled=true;status.textContent='Đang gửi kết quả…';
+ if(cfg.endpoint.includes('PASTE_YOUR')){status.textContent='Chưa kết nối Google Sheets. Điểm đã được tính trên thiết bị nhưng chưa gửi cho giảng viên. Hãy hoàn tất phần kết nối trong hướng dẫn.';btn.disabled=false;submitted=true;result.scrollIntoView({behavior:'smooth'});return;}
+ try{
+  const payload={studentId:sid,studentName:name,classCode:code,expectedClassCode:cfg.classCode,score,correct,total:QUESTIONS.length,answers:answers.map((a,i)=>({question:QUESTIONS[i].q,selected:a===null?'Chưa trả lời':String.fromCharCode(65+a)+'. '+(QUESTIONS[i].o[a]||''),correctAnswer:String.fromCharCode(65+QUESTIONS[i].a)+'. '+QUESTIONS[i].o[QUESTIONS[i].a],isCorrect:a===QUESTIONS[i].a,explanation:QUESTIONS[i].e})),userAgent:navigator.userAgent};
+  const response=await fetch(cfg.endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+  status.textContent='Đã gửi yêu cầu lưu kết quả. Hãy kiểm tra thông báo của giảng viên nếu cần xác nhận.';
+  submitted=true;
+ }catch(e){status.textContent='Không gửi được dữ liệu. Vui lòng chụp điểm hoặc liên hệ giảng viên; kiểm tra lại kết nối mạng.';btn.disabled=false;}
+ result.scrollIntoView({behavior:'smooth'});
+}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+renderQuestions();
+</script>
+</body></html>
